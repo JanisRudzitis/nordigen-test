@@ -208,8 +208,78 @@
 			"response": []
 		},
 		{
+			"name": "Step3.2RequestGrantToken",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "AIS:a12c0b59-a431-4994-8931-fbdb16a44720",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "c01c36a1-59f1-44c3-9589-7870c0201846",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "360ad5ce-ecfe-4ad4-83d1-9254e89a3ccc",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localapp.me/redirect/result",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "sandbox.handelsbanken.com/openbanking/redirect/oauth2/token/1.0",
+					"host": [
+						"sandbox",
+						"handelsbanken",
+						"com"
+					],
+					"path": [
+						"openbanking",
+						"redirect",
+						"oauth2",
+						"token",
+						"1.0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GetAccounts",
 			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
 				"disabledSystemHeaders": {
 					"accept": true
 				}
@@ -220,7 +290,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "VQ6NmU3NGZlYmYtYTI1NC00ZTJhLWIzZjItNzFjYTRkMjVlYTl",
+							"value": "MTQ0NjJkZmQ5OTM2NDE1ZTZjNGZmZjI1",
 							"type": "string"
 						}
 					]
@@ -230,11 +300,6 @@
 					{
 						"key": "X-IBM-Client-Id",
 						"value": "c01c36a1-59f1-44c3-9589-7870c0201846",
-						"type": "text"
-					},
-					{
-						"key": "Country",
-						"value": "SE",
 						"type": "text"
 					},
 					{
@@ -253,16 +318,15 @@
 						"type": "text"
 					},
 					{
-						"key": "access",
-						"value": "ALL_ACCOUNTS",
-						"type": "text"
-					},
-					{
 						"key": "Accept",
 						"value": "application/json",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
 				"url": {
 					"raw": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts",
 					"protocol": "https",
