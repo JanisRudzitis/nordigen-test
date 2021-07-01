@@ -397,7 +397,7 @@
 					"urlencoded": []
 				},
 				"url": {
-					"raw": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts",
+					"raw": "https://sandbox.handelsbanken.com/openbanking/psd2/v2/accounts/ae57e780-6cf3-11e9-9c41-e957ce7d7d69/transactions",
 					"protocol": "https",
 					"host": [
 						"sandbox",
@@ -408,7 +408,9 @@
 						"openbanking",
 						"psd2",
 						"v2",
-						"accounts"
+						"accounts",
+						"ae57e780-6cf3-11e9-9c41-e957ce7d7d69",
+						"transactions"
 					]
 				}
 			},
